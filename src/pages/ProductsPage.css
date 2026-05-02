@@ -1,0 +1,240 @@
+/* ── Intro ─────────────────────────────────────────────────────────────────── */
+.prod-intro {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+/* ── Category Cards Grid ────────────────────────────────────────────────────── */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.cat-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Category image thumbnail */
+.cat-card__img {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+.cat-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+.cat-card:hover .cat-card__img img { transform: scale(1.06); }
+.cat-card__img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(19,13,30,0.45));
+}
+
+.cat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+.cat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(90,26,138,0.15);
+  border-color: var(--primary);
+}
+
+.cat-card:hover::before { opacity: 0.03; }
+
+.cat-card__icon {
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 16px;
+  padding: 24px 28px 0;
+  color: var(--primary);
+  filter: drop-shadow(0 4px 8px rgba(90,26,138,0.2));
+}
+
+.cat-card__body {
+  padding: 0 28px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cat-card__name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+.cat-card__desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  flex: 1;
+}
+
+.cat-card__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.cat-card__hl {
+  background: rgba(90,26,138,0.07);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.cat-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.cat-card__count {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.cat-card__cta {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  transition: gap 0.2s;
+}
+
+.cat-card:hover .cat-card__cta { letter-spacing: 0.05em; }
+
+/* colour accents per category */
+.cat-card--washing-systems .cat-card__hl { background: rgba(0,120,200,0.08); color: #0078C8; }
+.cat-card--cleanroom-equipment .cat-card__hl { background: rgba(0,150,130,0.08); color: #009682; }
+.cat-card--cleanroom-furniture .cat-card__hl { background: rgba(180,130,0,0.1); color: #A07800; }
+.cat-card--cleanroom-panels .cat-card__hl { background: rgba(19,13,30,0.08); color: var(--navy); }
+
+@media (max-width: 1024px) {
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .cat-grid { grid-template-columns: 1fr; }
+  .cat-card__icon { font-size: 36px; padding: 18px 20px 0; }
+  .cat-card__body { padding: 0 20px 20px; }
+  .cat-card__name { font-size: 15px; }
+  .cat-card__img { height: 150px; }
+  .prod-intro { margin-bottom: 36px; }
+}
+
+/* Products page filter */
+.products-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.products-filter__btn {
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.products-filter__btn:hover,
+.products-filter__btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* OEB Guide */
+.oeb-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.oeb-guide-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.oeb-guide-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,87,183,0.1);
+}
+
+.oeb-guide-card__step {
+  font-size: 48px;
+  font-weight: 900;
+  background: linear-gradient(135deg, rgba(0,87,183,0.1), rgba(0,242,254,0.1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.oeb-guide-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.oeb-guide-card__desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .oeb-guide-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .oeb-guide-grid { grid-template-columns: 1fr; }
+  .products-filter { gap: 8px; }
+  .products-filter__btn { padding: 7px 14px; font-size: 12px; }
+}

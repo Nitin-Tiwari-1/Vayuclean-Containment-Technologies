@@ -1,0 +1,55 @@
+.compliance-oeb-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.validation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.validation-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.validation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,87,183,0.1);
+}
+
+.validation-card__icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: var(--primary);
+}
+
+.validation-card__title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.validation-card__desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .compliance-oeb-grid { grid-template-columns: 1fr; }
+  .validation-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .validation-grid { grid-template-columns: 1fr; }
+  .validation-card { padding: 24px 18px; }
+  .validation-card__title { font-size: 14px; }
+}

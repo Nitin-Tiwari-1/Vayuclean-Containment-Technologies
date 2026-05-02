@@ -1,0 +1,47 @@
+/* ─── ANIMATION CLASSES ──────────────────────────────────────
+   Usage: add  data-anim="fade-up"  (or other variants) to any element.
+   JS via useInView adds  .in-view  when the element enters the viewport.
+   ──────────────────────────────────────────────────────────── */
+
+/* Base hidden state */
+[data-anim] {
+  opacity: 0;
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Variants — initial offset */
+[data-anim="fade-up"]    { transform: translateY(40px); }
+[data-anim="fade-down"]  { transform: translateY(-30px); }
+[data-anim="fade-left"]  { transform: translateX(-40px); }
+[data-anim="fade-right"] { transform: translateX(40px); }
+[data-anim="fade"]       { transform: none; }
+[data-anim="zoom"]       { transform: scale(0.92); }
+[data-anim="zoom-in"]    { transform: scale(0.88); }
+
+/* Triggered state — element enters viewport */
+[data-anim].in-view {
+  opacity: 1;
+  transform: none !important;
+}
+
+/* Staggered delay helpers */
+[data-delay="100"] { transition-delay: 0.10s; }
+[data-delay="150"] { transition-delay: 0.15s; }
+[data-delay="200"] { transition-delay: 0.20s; }
+[data-delay="250"] { transition-delay: 0.25s; }
+[data-delay="300"] { transition-delay: 0.30s; }
+[data-delay="350"] { transition-delay: 0.35s; }
+[data-delay="400"] { transition-delay: 0.40s; }
+[data-delay="500"] { transition-delay: 0.50s; }
+[data-delay="600"] { transition-delay: 0.60s; }
+[data-delay="700"] { transition-delay: 0.70s; }
+
+/* Respect user's motion preference */
+@media (prefers-reduced-motion: reduce) {
+  [data-anim] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

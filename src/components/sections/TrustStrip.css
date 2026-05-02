@@ -1,0 +1,13 @@
+.trust-strip { background: var(--gradient-dark); padding: 18px 0; }
+.trust-strip__inner {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; flex-wrap: wrap; text-align: center;
+}
+.trust-strip__item { display: flex; align-items: center; gap: 12px; }
+.trust-strip__cert {
+  background: rgba(255,255,255,0.2); padding: 4px 14px;
+  border-radius: 20px; font-size: 12px; color: white;
+  font-weight: 600; font-family: 'Montserrat', sans-serif;
+}
+.trust-strip__sep { color: rgba(255,255,255,0.4); }
+.trust-strip__text { color: rgba(255,255,255,0.85); font-size: 14px; }

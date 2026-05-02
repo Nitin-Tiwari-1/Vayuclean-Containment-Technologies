@@ -1,0 +1,22 @@
+.stats-strip {
+  background: linear-gradient(135deg, #441268 0%, #5A1A8A 50%, #9A7600 100%);
+  padding: 40px 0;
+  overflow: hidden;
+}
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 32px; text-align: center;
+}
+.stat__num {
+  font-family: 'Montserrat', sans-serif; font-size: 36px;
+  font-weight: 900; color: white;
+}
+.stat__label { font-size: 13px; color: rgba(255,255,255,0.8); margin-top: 4px; font-weight: 500; }
+
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .stat__num { font-size: 28px; }
+}
+@media (max-width: 400px) {
+  .stats-grid { grid-template-columns: 1fr; gap: 20px; }
+}

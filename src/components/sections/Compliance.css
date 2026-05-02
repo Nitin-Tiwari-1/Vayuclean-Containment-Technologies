@@ -1,0 +1,25 @@
+.compliance-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+}
+.compliance-card {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px; padding: 28px 20px; text-align: center; transition: border-color 0.3s;
+}
+.compliance-card:hover { border-color: rgba(212,168,32,0.55); }
+.compliance-card__logo {
+  width: 64px; height: 64px; border-radius: 12px; margin: 0 auto 16px;
+  background: rgba(212,168,32,0.18); display: flex; align-items: center;
+  justify-content: center; font-size: 28px; color: var(--cyan);
+}
+.compliance-card__name {
+  font-size: 16px; font-weight: 700; color: white;
+  margin-bottom: 6px; font-family: 'Montserrat', sans-serif;
+}
+.compliance-card__desc { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+@media (max-width: 1024px) {
+  .compliance-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .compliance-grid { grid-template-columns: 1fr; }
+}
